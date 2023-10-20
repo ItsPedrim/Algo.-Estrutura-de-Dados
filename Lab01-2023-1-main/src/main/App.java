@@ -1,38 +1,43 @@
 package main;
 public class App {
-    public static int encontre(int[] arrayOrdenado, int num){
-
+    
     public static int encontre(int[] arrayOrdenado, int num) {
 
-        int contador = 0;
+        boolean encontrou = false;
 
-        while (contador < arrayOrdenado.length - 1) {
-                
-            if (num == arrayOrdenado[contador]) {
-                    
+        for (int i = 0; i < arrayOrdenado.length; i++) {
+
+            if (num == arrayOrdenado[i]) {
+
+                encontrou = true;
                 return 1;
+            }
+        }
 
-                }
-                
-            else {
+        if (encontrou == false) {
 
-                continue;
-
-                }
-
-            contador += 1;
+            return 0;
         }
         
-    return -1; 
-
+        return -1;
 }
 
-    public static int maior(int[] arrayDesordenado){
-        
-        return -1;
-    }
+ public static int maior(int[] arrayDesordenado) {
 
-    public static Integer parMaisProximo(Integer[][] pares){
+        int maior = arrayDesordenado[0];
+
+        for (int i = 0; i < arrayDesordenado.length; i++) {
+
+            if (arrayDesordenado[i] > maior) {
+
+                maior = arrayDesordenado[i];
+            }
+
+        }
+        return maior;
+    }
+    
+    public static Integer parMaisProximo(Integer[][] pares) {
         
         return 1;
     }
@@ -42,7 +47,7 @@ public class App {
         int[] array1 = new int[] {1, 2, 3, 4, 5};
 
         System.out.println(encontre(array1, 3));
-
+        System.out.println(maior(array1));
     }
     
 }
